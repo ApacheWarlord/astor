@@ -2,9 +2,10 @@ import pygame
 from constants import *
 
 def main():
-    pygame.init()  # <-- Very important!
+    print("Starting Asteroids!")
+    pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption("Astroids Game")
+    pygame.display.set_caption("Test Window Loop")
     clock = pygame.time.Clock()
     running = True
 
@@ -16,3 +17,6 @@ def main():
         pygame.display.flip()
         clock.tick(60)
     pygame.quit()
+
+if __name__ == "__main__":
+    main()
