@@ -2,13 +2,16 @@ import pygame
 from constants import *
 from player import *
 from circleshape import *
+from asteroid import *
 
 def main():
     print("Starting Asteroids!")
     pygame.init()
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    asteroid = pygame.sprite.Group()
     Player.containers =(updatable,drawable)
+    asteroid.containers = (asteroid,updatable,drawable)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Astroids Game")
     clock = pygame.time.Clock()
