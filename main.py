@@ -3,6 +3,7 @@ from constants import *
 from player import *
 from circleshape import *
 from asteroid import *
+from asteroidfield import * 
 
 def main():
     print("Starting Asteroids!")
