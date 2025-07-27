@@ -12,7 +12,13 @@ def main():
     drawable = pygame.sprite.Group()
     asteroid = pygame.sprite.Group()
     Player.containers =(updatable,drawable)
-    asteroid.containers = (asteroid,updatable,drawable)
+    Asteroid.containers = (asteroid,updatable,drawable)
+    AsteroidField.containers = (updatable,)
+    asteroid_field = AsteroidField()
+
+
+
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Astroids Game")
     clock = pygame.time.Clock()
@@ -26,9 +32,12 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         screen.fill((0, 0, 0))
-        updatable.update(dt)
-        for thing in drawable:
-            thing.draw(screen)
+        
+        for sprite in updatable:
+            sprite.update(dt)
+
+        for sprite in drawable:
+            sprite.draw(screen)
 
         pygame.display.flip()
         dt = clock.tick(60)
