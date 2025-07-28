@@ -37,6 +37,7 @@ def main():
     dt = 0
     running = True
     player = Player(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
+   
     
 
     while running:
