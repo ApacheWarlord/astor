@@ -5,18 +5,13 @@ from constants import *
 import pygame
 
 
-print(f"CircleShape has collision: {hasattr(CircleShape, 'collision')}")
-test_circle = CircleShape(0, 0, 10)
-print(f"test_circle has collision: {hasattr(test_circle, 'collision')}")
+
 class Asteroid(CircleShape):
     def __init__(self,x,y,radius):
         super().__init__(x,y,radius)
         self.rect = self.image.get_rect(center=(x, y))
 
-    print(f"Asteroid class has collision: {hasattr(Asteroid, 'collision')}")
-    test_asteroid = Asteroid(0, 0, 10)
-    print(f"test_asteroid has collision: {hasattr(test_asteroid, 'collision')}")
-
+   
 
     def draw(self,screen):
         pygame.draw.circle(screen,WHITE,self.position,self.radius,2)
