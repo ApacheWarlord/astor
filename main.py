@@ -56,6 +56,17 @@ def main():
                 print("Game Over!")
                 sys.exit()
 
+        
+        for shot in shot_group:
+            for asteroid_obj in asteroid:
+                print(f"Asteroid type: {type(asteroid_obj)}")
+                print(f"Has collision method: {hasattr(asteroid_obj, 'collision')}")
+                if asteroid_obj.collision(shot):
+                    shot.kill()
+                    asteroid_obj.split()
+                    break
+            
+
         for sprite in drawable:
             sprite.draw(screen)
 

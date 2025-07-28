@@ -63,3 +63,14 @@ class Player(CircleShape):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_SPEED * dt
 
+
+
+    def collision(self,obj):
+        
+        dist = self.position.distance_to(obj.position)
+
+        if dist <= self.radius + obj.radius:
+            return True
+        else:
+            return False
+
